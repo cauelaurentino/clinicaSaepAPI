@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: br.eti.caue.clinicaSaepAPI.ClinicaSaepApiApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.312 s -- in br.eti.caue.clinicaSaepAPI.ClinicaSaepApiApplicationTests
