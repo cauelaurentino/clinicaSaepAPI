@@ -4,10 +4,13 @@
  */
 package br.eti.caue.clinicaSaepAPI.database.repository;
 
+import br.eti.caue.clinicaSaepAPI.database.model.TutoresEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+
 /**
  *
  * @author digma
  */
-public interface AgendamentosRepository {
-    
+public interface AgendamentosRepository extends JpaRepository<TutoresEntity, Long> {
+    // Uma interface diz o que tem que ser feito (cardapio), mas sem fazer, nesse caso só libera opções como .save, .findById...        
 }

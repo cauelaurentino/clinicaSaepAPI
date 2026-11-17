@@ -12,5 +12,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author digma
  */
 public interface PetsRepository extends JpaRepository<PetsEntity, Long> {
-    
+    // Uma interface diz o que tem que ser feito (cardapio), mas sem fazer, nesse caso só libera opções como .save, .findById...    
 }

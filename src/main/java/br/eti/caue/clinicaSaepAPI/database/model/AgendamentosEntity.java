@@ -13,6 +13,10 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.time.LocalDateTime;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  *
@@ -21,6 +25,13 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table (name = "tb_agendamentos")
+
+// ANOTAÇÕES LOMBOK:
+@Getter // Cria todos os getNome(), getRaca(), etc.
+@Setter // Cria todos os setNome(), setRaca(), etc.
+@NoArgsConstructor // Obriga o Lombok a criar um construtor vazio (O Hibernate EXIGE isso)
+@AllArgsConstructor // Cria um construtor com todos os campos (útil para testes)
+
 public class AgendamentosEntity {
    
     @Id

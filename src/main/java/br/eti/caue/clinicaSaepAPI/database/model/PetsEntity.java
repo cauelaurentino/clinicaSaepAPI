@@ -12,6 +12,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  *
@@ -19,18 +23,25 @@ import jakarta.persistence.Table;
  */
 @Entity
 @Table(name = "tb_pets")
+
+// ANOTAÇÕES LOMBOK:
+@Getter // Cria todos os getNome(), getRaca(), etc.
+@Setter // Cria todos os setNome(), setRaca(), etc.
+@NoArgsConstructor // Obriga o Lombok a criar um construtor vazio (O Hibernate EXIGE isso)
+@AllArgsConstructor // Cria um construtor com todos os campos (útil para testes)
+
 public class PetsEntity {
   
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long idPet;
     
     @Column (nullable = false, length = 100)
     private String nomePet;
     
-    private int peso;
+    private int raca;
     
-    @ManyToOne
-    @JoinColumn(name = "idTutor", nullable = false)
-    private TutoresEntity tutor;
+    @ManyToOne // Muitos pets para um dono
+    @JoinColumn(name = "idTutor", nullable = false) // Foreign Key, puxando o id do tutor
+    private TutoresEntity tutorPet; // puxando o id na coluna tutor, já puxo todos os dados da classe TutoresEntity
 }
